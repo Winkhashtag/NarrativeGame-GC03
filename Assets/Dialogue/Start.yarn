@@ -1,0 +1,91 @@
+﻿title: Start
+color: red
+position: 407,-59
+---
+<<declare $playerName = "Bob">>
+<<declare $knowsName = false>>
+<<declare $playerCash = 0>>
+
+moochi: whats your name?
+-> why do you care?
+-> John
+    <<set $playerName = "John">>
+    <<set $knowsName = true>>
+-> Felicia
+    <<set $playerName = "Felicia">>
+    <<set $knowsName = true>>
+    <<set $playerCash = 100>>
+
+moochi: hello, {$playerName}!
+
+<<if !$knowsName>>
+wait, how did you know my name?
+<<endif>>
+
+<<if $playerCash > 50>>
+moochi: hmmm, i see you have some money
+-> here's some
+    <<set $playerCash = $playerCash - 10>>
+-> ...
+<<else>>
+moochi: hmm, we are the same...
+<<endif>>
+
+-> hello?
+    moochi: yeah, hello!
+-> why are you talking to me?
+    <<detour Question_Talking>>
+-> ...
+
+<<jump Goodbye>>
+===
+
+title: Question_Talking
+color: red
+position: 241,127
+---
+moochi: idk, you came here...
+moochi: why are you here?
+-> i pressed play on this unity project
+-> i never asked to be here
+    moochi: you can just leave, you know
+===
+
+title: Goodbye
+---
+moochi: goodbye
+-> goodbye
+    <<jump Goodbye_Response>>
+-> wait a second...
+    <<jump Wait_Response>>
+-> do you still want some money? <<if $playerCash > 50>>
+    <<set $playerCash = $playerCash - 10>>
+    moochi: thank you
+===
+
+title: Goodbye_Response
+color: red
+position: 381,573
+---
+moochi: ok, goodbye
+-> are you really just gonna leave?
+-> where are you going next?
+===
+
+title: Wait_Response
+position: -93,244
+group: wait
+---
+moochi: what do you want?
+-> i want to play a game
+    <<jump Game>>
+-> nevermind, Goodbye
+    <<jump Goodbye>>>>
+===
+
+title: Game
+position: -43,544
+---
+moochi: cool, i have a game for you
+~THE GAME DOESNT EXIST YET~
+===
