@@ -1,4 +1,21 @@
 ﻿title: Start
+---
+September 30th, 1998...a day I'll never forget.
+<<wait 3>>
+Dinner at 6
+Orb1: watch me grow!
+<<grow Orb1 1.5 1>>
+Orb2: nah, I'd win.
+<<grow Orb2 3 1>>
+<<change_light Orb1 LightRed>>
+<<change_light Orb1 LightGreen>>
+wow ok.
+===
+
+
+
+
+title: Start_moochi
 color: red
 position: 407,-59
 ---

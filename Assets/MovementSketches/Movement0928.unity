@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 316507210}
   - component: {fileID: 316507209}
   - component: {fileID: 316507208}
-  - component: {fileID: 316507207}
   - component: {fileID: 316507212}
   m_Layer: 0
   m_Name: Cube
@@ -140,19 +139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &316507207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316507206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b7bd7eda55921440a77abd85167f014, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  Move: {fileID: -582135883111015124, guid: 7f4c255d09bdb0a4c8ae9971482d8d15, type: 3}
 --- !u!65 &316507208
 BoxCollider:
   m_ObjectHideFlags: 0
