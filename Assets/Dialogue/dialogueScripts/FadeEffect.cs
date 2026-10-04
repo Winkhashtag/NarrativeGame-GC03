@@ -18,10 +18,10 @@ public class FadeEffect : MonoBehaviour
         float startAlpha = canvasGroup.alpha;
         float time = 0;
 
-        while (time < duration)
+        while (time < duration) //as long as its running
         {
             time += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, time / duration);
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, time / duration); //lerp the values
             yield return null;
         }
 

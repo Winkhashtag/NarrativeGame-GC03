@@ -1,13 +1,14 @@
-﻿
-title: Start
+﻿title: Start
 ---
 <<fade CanvasFade 0.0 5.0>>
 <<wait 3>> //start black go to white
 *BEEP BEEP BEEP*// insert sound
 <<wait 2>>
-hnhjgjhgfdjgdgdfjjadjir //make the text shake
+hnhjgjhgfdjgdgdfjjadjir
 <<wait 1>>
-You look your alarm clock. //make an image appear on screen
+You look your alarm clock.
+<<wait 2>>
+
 You close your eyes again. 
 <<fade CanvasFade 1.0 4.0>>
 <<wait 3>> 
