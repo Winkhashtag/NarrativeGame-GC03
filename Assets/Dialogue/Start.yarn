@@ -1,6 +1,6 @@
 ﻿title: Start
 ---
-<<fade CanvasFade 0.0 5.0>>
+<<fade Game 0.0 5.0>>
 <<wait 3>> //start black go to white
 *BEEP BEEP BEEP*// insert sound
 <<wait 2>>
@@ -10,14 +10,14 @@ You look your alarm clock.
 <<wait 2>>
 
 You close your eyes again. 
-<<fade CanvasFade 1.0 4.0>>
+<<fade Game 1.0 4.0>>
 <<wait 3>> 
-<<fade CanvasFade 0.0 3.0>>
+<<fade Game 0.0 3.0>>
 Glaicer: Hey Nora, wait up! I have something I need to show you!
 Nora: Oh hey Glacier, what's up?
 <<wait 3>>
 Nora: What did you wanna show me?
-Glacier: ...Sorry...Catching my...breath..
+Glacier: ...Sorry...Catching...breath..
 He rustles through his bag.
 Glacier: This! Here look!
 ===
