@@ -1,14 +1,14 @@
 ﻿title: Start
 ---
-<<fade Game 0.0 5.0>>
-<<wait 3>> //start black go to white
+<<fade2 0.0 2.0>>
+<<wait 2>> //start black go to white
 *BEEP BEEP BEEP*// insert sound
 <<wait 2>>
 hnhjgjhgfdjgdgdfjjadjir
 <<wait 1>>
 You look your alarm clock.
+<<image_Coroutine Game 2.0>>
 <<wait 2>>
-
 You close your eyes again. 
 <<fade Game 1.0 4.0>>
 <<wait 3>> 
@@ -20,6 +20,7 @@ Nora: What did you wanna show me?
 Glacier: ...Sorry...Catching...breath..
 He rustles through his bag.
 Glacier: This! Here look!
+<<image_Coroutine Game 2.0>>
 ===
 
 

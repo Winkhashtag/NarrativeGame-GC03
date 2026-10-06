@@ -7,19 +7,23 @@ public class Orb : MonoBehaviour
     [YarnCommand("grow")]
    public IEnumerator Grow(float target, float time)
     {
-        Vector3 targetScale = target * Vector3.one;
+       
+        float initial = transform.localScale.x; //always scale equally
+
         float elapsed = 0f;
         while (elapsed < time)    //going from 0 to 1 during the duration of the while loop
         {
+            //fins how mch percentage of the time has elapsed (0 -> 1)
             float elapsedPct = elapsed / time;
             //animate anything you want using elapsed percent (elaspedPct)
-            Vector3 currScale = Mathf.Lerp(1f, target, elapsedPct) * Vector3.one; //however much is left is however much we move to the target
-            transform.localScale = elapsedPct * targetScale;
+            //in this case move from initialScale to targetScale
+            float currScale = Mathf.Lerp(1f, target, elapsedPct); //however much is left is however much we move to the target
+            transform.localScale = currScale * Vector3.one;
 
             elapsed += Time.deltaTime; //how much time has passed between the frame being called
             yield return null;
         }
-        transform.localScale = targetScale;
+        transform.localScale = target * Vector3.one;
     
     }
 

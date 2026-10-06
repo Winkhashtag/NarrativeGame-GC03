@@ -1,10 +1,11 @@
 using UnityEngine;
 using System.Collections;
 using Yarn.Unity;
+using Unity.VisualScripting;
+using UnityEngine.UI;
 public class Game : MonoBehaviour
 {
    public static Game Instance { get; private set; }
-
 
     void Awake()
     {
@@ -15,29 +16,58 @@ public class Game : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-    }
 
-    [SerializeField] private CanvasGroup canvasGroup;
 
+        _image.enabled = false;
+      
+        
+    
+}
+
+    [SerializeField] private CanvasGroup _fade;
+
+  
     [YarnCommand("fade")]
-    public Coroutine FadeScreen(float targetAlpha, float duration)
+    public static Coroutine FadeScreen(float targetAlpha, float duration)
     {
         //wait for finish
-        return StartCoroutine(FadeRoutine(targetAlpha, duration));
+        return Instance.StartCoroutine(Instance.FadeRoutine(targetAlpha, duration));
     }
 
     private IEnumerator FadeRoutine(float targetAlpha, float duration)
     {
-        float startAlpha = canvasGroup.alpha;
+        float startAlpha = _fade.alpha;
         float time = 0;
 
         while (time < duration) //as long as its running
         {
             time += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, time / duration); //lerp the values
+            _fade.alpha = Mathf.Lerp(startAlpha, targetAlpha, time / duration); //lerp the values
             yield return null;
         }
 
-        canvasGroup.alpha = targetAlpha;
+        _fade.alpha = targetAlpha;
     }
+
+    [SerializeField] private Image _image;
+
+    [YarnCommand("image_Coroutine")]
+    public static Coroutine ImageCoroutine(float duration)
+    {
+        return Instance.StartCoroutine(ImageRoutine(duration));
+    }
+    private static IEnumerator ImageRoutine(float duration)
+    {
+        Debug.Log("message");
+        Instance._image.enabled = true;
+        yield return new WaitForSeconds(duration);
+        Instance._image.enabled = false;
+        Debug.Log("2 seconds");
+    }
+
+    [YarnCommand("image_enable")]
+    public static void ImageOn(GameObject image)
+    {
+
+    }    
 }
