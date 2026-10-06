@@ -3,9 +3,12 @@ using System.Collections;
 using Yarn.Unity;
 using Unity.VisualScripting;
 using UnityEngine.UI;
+using System.Collections.Generic;
 public class Game : MonoBehaviour
 {
    public static Game Instance { get; private set; }
+
+    public List<Images> _images;
 
     void Awake()
     {
@@ -19,10 +22,9 @@ public class Game : MonoBehaviour
 
 
         _image.enabled = false;
-      
-        
-    
 }
+    
+
 
     [SerializeField] private CanvasGroup _fade;
 
