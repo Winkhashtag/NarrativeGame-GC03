@@ -1,6 +1,62 @@
 ﻿title: Start
 ---
-<<fade2 0.0 2.0>>
+<<img_ctrl 0>>
+<<fade 0.0 2.0>>
+<<play_BGM 0>>
+The snow hitting the windows creates a faint ambience that is interrupted by the second bell.
+<<play_sfx 0>>
+Rae: I'm SO annoyed.
+Rae: Why do WE have to help set up for this stupid play anyway?
+Rae: I'd rather just have plain 'ol detention.
+-> Aw come on, you know it's better than fiddling your thumbs in some empty classroom.
+    Me: Aw come on, you know it's better than fiddling your thumbs in some empty classroom. Plus, Mr. Feckle said there would be snacks.
+-> Well, I thought it sounded enticing, at least we aren't sitting around.
+    Me: Well, I thought it sounded enticing, at least we aren't sitting around.
+    Me: Plus, Mr. Feckle said there would be snacks.
+Rae: What's so great about helping a bunch of theatre kids?
+Me: Snacks?
+Me: Rae: Snacks? You can't bribe me with snacks.
+<<wait 2>>
+Rae: What kind of snacks?
+Me: ....
+Me: The snacks are mainly for cast and crew, though we can probably take some while no one is looking...
+Rae: Ugh this detention stuff is RUINING MY LIFE.
+-> Weren't you the one who wanted to play Quake on Mrs. Jennings' computer?
+    Me: Weren't you the one who wanted to play Quake on Mrs. Jennings' computer?
+    Rae: Yeah, and I'd do it again. Her class is a total snooze fest.
+    Me: I heard Rory is in your class, too. What a teacher's pet.
+    Rae: You could say that again. Next time I see her...ooomgh I'm getting angry just thinking about it.
+-> Then maybe you shouldn't have thrown your lunch at Mr. Lester..
+    Me: Then maybe you shouldn't have thrown your lunch at Mr. Lester...That guy is a brick wall.
+    Rae: I'd do it again! It's like he wanted me to get pissed off.
+    Me: Why do you say that?
+    Rae: He thinks he owns this place. Plus he chews with his mouth open.
+    Rae: Like did no one teach him not to be so fucking gross? Sorry. I just can't stand that guy.
+    Me: Fair enough.
+<<fade 1.0 3.0>>
+<<jump Theatre>>
+===
+
+title: Theatre
+---
+<<fade 0.0 2.0>>
+<<img_ctrl 6>>
+<<play_BGM 1>>
+Rae: I really don't want to do this...
+Me: Oh come on, you're such a baby.
+Rae: Nah! I just...I'm getting a bad feeling about this..
+-> You're just scared of a bunch of weird musical lovers.
+    Me:  You're just scared of a bunch of weird musical lovers. Trust, it'll be over before you know it.
+-> Bad feeling about what?
+    Me: What bad feeling? They're just a bunch of flamboyant frehsman walking around.
+Rae: I don't know... I just want to go home. This place is so lame.
+Me: We haven't even started.
+Rae: Okay, fine. Just know I will be saying I told you so.
+===
+
+title: intro
+---
+<<fade 0.0 2.0>>
 <<wait 2>> //start black go to white
 *BEEP BEEP BEEP*// insert sound
 <<wait 2>>
@@ -22,7 +78,6 @@ He rustles through his bag.
 Glacier: This! Here look!
 <<image_Coroutine Game 2.0>>
 ===
-
 
 
 

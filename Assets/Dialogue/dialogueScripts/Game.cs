@@ -4,11 +4,10 @@ using Yarn.Unity;
 using Unity.VisualScripting;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 public class Game : MonoBehaviour
 {
    public static Game Instance { get; private set; }
-
-    public List<Images> _images;
 
     void Awake()
     {
@@ -51,7 +50,7 @@ public class Game : MonoBehaviour
         _fade.alpha = targetAlpha;
     }
 
-    [SerializeField] private Image _image;
+    [SerializeField] private Image Co_image;
 
     [YarnCommand("image_Coroutine")]
     public static Coroutine ImageCoroutine(float duration)
@@ -61,15 +60,42 @@ public class Game : MonoBehaviour
     private static IEnumerator ImageRoutine(float duration)
     {
         Debug.Log("message");
-        Instance._image.enabled = true;
+        Instance.Co_image.enabled = true;
         yield return new WaitForSeconds(duration);
-        Instance._image.enabled = false;
+        Instance.Co_image.enabled = false;
         Debug.Log("2 seconds");
     }
 
-    [YarnCommand("image_enable")]
-    public static void ImageOn(GameObject image)
-    {
+    public RawImage _image;
+    public List<RawImage> _imageList;
 
-    }    
+    [YarnCommand("img_ctrl")]
+    public static void ImageControl(int index)
+    {
+        Instance._image.texture = Instance._imageList[index].texture;
+        Instance._image.gameObject.SetActive(true);
+        Instance._image.enabled = true;
+
+    }
+
+    public AudioSource sfx;
+    public List<AudioClip> sfxOptions;
+    public AudioSource bgMusic;
+    public List<AudioClip> bgMusicOptions;
+
+    [YarnCommand("play_sfx")]
+    public static void SFX(int index)
+    {
+        Instance.sfx.PlayOneShot(Instance.sfxOptions[index]);
+        Debug.Log("played SFX " + index);
+    }
+
+    [YarnCommand("play_BGM")]
+    public static void BGMusic(int index)
+    {
+        Instance.bgMusic.clip = Instance.bgMusicOptions[index];
+        Instance.bgMusic.Play();
+        Debug.Log("played BGM " + index);
+    }
+
 }
