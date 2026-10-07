@@ -15,7 +15,7 @@ Rae: I'd rather just have plain 'ol detention.
     Me: Plus, Mr. Feckle said there would be snacks.
 Rae: What's so great about helping a bunch of theatre kids?
 Me: Snacks?
-Me: Rae: Snacks? You can't bribe me with snacks.
+Rae: Snacks? You can't bribe me with snacks.
 <<wait 2>>
 Rae: What kind of snacks?
 Me: ....
@@ -40,7 +40,7 @@ Rae: Ugh this detention stuff is RUINING MY LIFE.
 title: Theatre
 ---
 <<fade 0.0 2.0>>
-<<img_ctrl 6>>
+<<img_ctrl 5>>
 <<play_BGM 1>>
 Rae: I really don't want to do this...
 Me: Oh come on, you're such a baby.
