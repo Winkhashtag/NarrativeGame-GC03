@@ -52,6 +52,35 @@ Rae: Nah! I just...I'm getting a bad feeling about this..
 Rae: I don't know... I just want to go home. This place is so lame.
 Me: We haven't even started.
 Rae: Okay, fine. Just know I will be saying I told you so.
+Me: Let's go.
+<<fade 1.0 2.0>>
+<<fade 0.0 3.0>>
+???: Hey. You two. Why are you just sitting around?
+-> We haven't been assigned anything to do.
+    Me: We haven't been assigned anything to do.
+    ???: That's not an excuse. There's plenty for you to do.
+    Rae: You want us to be telepathic or something?
+    ???: No.
+    ???: Look, I'm in charge of keeping an eye on you two. If you act out, I won't hesitate to give you more detention.
+-> We have no idea what we are supposed to do.
+    Me: We have no idea what we are supposed to do.
+    Rae: Yeah, we just got here! Cut us some slack.
+    ???: I have been watching you, nothing but slackers you two are.
+    Rae: Aw, come on, I thought this would be a chill getaway from the classroom.
+    ???: This is not a 'chill getaway'. You either get up off your asses or I'm giving you two more detention.
+    Rae: Okay, geez!
+???: I want you two to begin your detention by cleaning out the old storage room.
+Me: We can do that! Right, Rae?
+Rae: Huh? Yeah, whatever. Let's just hurry up so we can leave.
+<<fade 0.0 3.0>>>
+<<jump storage_room>>
+===
+
+title: storage_room
+---
+<<img_ctrl 2>>
+Me: Looks normal enough, Rae.
+Rae: Uh-huh..
 ===
 
 title: intro
@@ -78,8 +107,6 @@ He rustles through his bag.
 Glacier: This! Here look!
 <<image_Coroutine Game 2.0>>
 ===
-
-
 
 title: Start_demo
 ---
