@@ -1,4 +1,33 @@
 ﻿title: Guy
 ---
-I love everyone equally.
+Guy: Yo what's up i'm Guy. <<once>>
+Guy: I love everyone equally.
+<<if visited("Smosh")>>
+    <<jump Guy_visited_Smosh>>
+<<else>>
+Guy: I love the world.
+<<endif>>
+===
+
+title: Smosh
+---
+Smosh: SHUT UP!
+<<if $good: bool>>
+    Smosh: I'm glad you're good tho
+<<else>>
+    Smosh: Why are you not good?
+===
+
+title: Guy_NotVisited_Smosh
+---
+Guy: How are you?
+-> Good
+    <<set $good: bool = true>>
+-> Not good
+    <<set $notgood: bool = true>>
+===
+
+title: Guy_visited_Smosh
+---
+Guy: That guy is so mean.
 ===
