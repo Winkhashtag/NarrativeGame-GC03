@@ -6,25 +6,27 @@ Guy: I love everyone equally.
     <<jump Guy_visited_Smosh>>
 <<else>>
 Guy: I love the world.
+<<jump  Guy_NotVisited_Smosh>>
 <<endif>>
 ===
 
 title: Smosh
 ---
 Smosh: SHUT UP!
-<<if $good: bool>>
+<<if $good>>
     Smosh: I'm glad you're good tho
-<<else>>
+<<elseif $notgood>>
     Smosh: Why are you not good?
+<<endif>>
 ===
 
 title: Guy_NotVisited_Smosh
 ---
 Guy: How are you?
 -> Good
-    <<set $good: bool = true>>
+    <<set $good = true>>
 -> Not good
-    <<set $notgood: bool = true>>
+    <<set $notgood = true>>
 ===
 
 title: Guy_visited_Smosh
