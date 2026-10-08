@@ -34,6 +34,7 @@ Rae: Ugh this detention stuff is RUINING MY LIFE.
     Rae: Like did no one teach him not to be so fucking gross? Sorry. I just can't stand that guy.
     Me: Fair enough.
 <<fade 1.0 3.0>>
+<<img_ctrl 5>>
 <<jump Theatre>>
 ===
 
@@ -72,15 +73,21 @@ Me: Let's go.
 ???: I want you two to begin your detention by cleaning out the old storage room.
 Me: We can do that! Right, Rae?
 Rae: Huh? Yeah, whatever. Let's just hurry up so we can leave.
-<<fade 0.0 3.0>>>
+<<fade 1.0 3.0>>
+<<img_ctrl 2>>
 <<jump storage_room>>
 ===
 
 title: storage_room
 ---
+<<fade 0.0 3.0>>>
+<<play_BGM 0>>
 <<img_ctrl 2>>
+You look around the storage room, it's empty atmosphere gives you the heebie jeebies.
 Me: Looks normal enough, Rae.
 Rae: Uh-huh..
+Rae: You know...this is a good place to slack off...
+-> Rae, no. We don't want to get into any more trouble.
 ===
 
 title: intro
