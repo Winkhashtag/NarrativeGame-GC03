@@ -5,6 +5,7 @@ using Yarn.Unity.Attributes;
 public class Interactable : MonoBehaviour
 {
     public YarnProject Project;
+    
 
     [YarnNode("Project")]
     public string Node;
@@ -14,4 +15,7 @@ public void StartInteraction()
         Debug.Log("start interaction");
         dialogue.Instance.Runner.StartDialogue(Node);
     }
+
+  
+
 }

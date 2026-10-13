@@ -8,8 +8,6 @@ public class dialogue : MonoBehaviour
 
     public DialogueRunner Runner;
 
-    
-
     private void Awake()
     {
         if (Instance)
@@ -41,4 +39,6 @@ public class dialogue : MonoBehaviour
     {
         Runner.StartDialogue(node);
     }
+
+   
 }
