@@ -8,11 +8,10 @@ public class Interactable : MonoBehaviour
 
     [YarnNode("Project")]
     public string Node;
-    public DialogueRunner Dialogue;
 
 public void StartInteraction()
     {
         Debug.Log("start interaction");
-        Dialogue.StartDialogue(Node);
+        dialogue.Instance.Runner.StartDialogue(Node);
     }
 }

@@ -1,6 +1,10 @@
 ﻿title: Guy
 ---
 Guy: Yo what's up i'm Guy. <<once>>
+<<if $collectables > 3>>
+    Guy: I'm a loving maching but I want your money.
+    <<set $collectables = $collectables -3>>
+    <<endif>>
 Guy: I love everyone equally.
 <<if visited("Smosh")>>
     <<jump Guy_visited_Smosh>>
@@ -32,4 +36,10 @@ Guy: How are you?
 title: Guy_visited_Smosh
 ---
 Guy: That guy is so mean.
+===
+
+title: Info
+---
+<<declare $collectables = 0>>
+you have {$collectables} collectables!
 ===
