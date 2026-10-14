@@ -4,6 +4,7 @@ using Yarn.Unity;
 public class dialogue : MonoBehaviour
 {
     const string k_CollectableVariableName = "$collectables";
+    const string k_candy = "$candy";
     public static dialogue Instance;
 
     public DialogueRunner Runner;
@@ -33,6 +34,12 @@ public class dialogue : MonoBehaviour
         collectables += 1;
 
         variableStorage.SetValue(k_CollectableVariableName, collectables);
+
+        bool hasValue2 = variableStorage.TryGetValue(k_candy, out float candy);
+
+        candy += 1;
+
+        variableStorage.SetValue(k_candy, candy);
     }
 
     public void StartNode(string node)

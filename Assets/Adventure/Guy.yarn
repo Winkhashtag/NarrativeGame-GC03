@@ -1,4 +1,65 @@
-﻿title: Guy
+﻿title: mom
+---
+<<if $handing == true>>
+    <<jump mom_gave_candy>>
+<<endif>>
+Mom: Sweetie, are you sure you don't want me to accompany you tonight?
+Me: No, Mom! Everyone else is trick or treating by themselves.
+Me: I don't want to be known as the kid who needed his mom to trick or treat with him..
+Mom: Okay, honey..No worries...Just make sure you stay safe.
+Mom: Oh, and be home before 10!
+Me: Okay, Mom. Anything else?
+Mom: Yes. She leans down and kisses your cheek.
+Me: Mom!
+The doorbell rings.
+Mom: Pat, go hand the kids some candy on your way out.
+Me: Do I have to?
+Mom: Yes. Now go.
+===
+title: kid1
+---
+Kid 1: Trick or treat!
+<<if $candy > 0>>
+    Give candy?
+    -> Yes
+        <<set $candy = $candy - 1>>
+        <<set $handing = true>>
+        Kid 1: YAY! Thanks for the candy!
+    -> No
+        Kid 1:  Where's the candy?
+        Me: Sorry, but I want my own candy.
+<<elseif $candy == 0>>
+   Me: Sorry kids, no candy here.
+<<endif>>
+===
+
+title: kid2
+---
+Kid 2: Trick or treat!
+    <<if $candy > 0>>
+     Give candy?
+    -> No
+        Kid 2: Happy Halloween!
+        Me: Sorry kid, no candy.
+        Kid 2: WAAAAAAAAAAAAAAAAAA
+    -> Yes
+        <<set $candy = $candy - 1>>
+        <<set $handing = true>>
+        Kid 2: Happy Halloween!
+        Me: Here's some candy.
+        Kid 2: Thank you!!
+<<elseif $candy == 0>>
+   Me: Sorry kids, no candy here.
+<<endif>>
+===
+
+title: mom_gave_candy
+---
+Me: Ma, I handed them candy.
+Mom: Thanks, honey. Now, go get all the candy you can carry.
+===
+
+title: Guy
 ---
 Guy: Yo what's up i'm Guy. <<once>>
 <<if $collectables > 3>>
@@ -40,6 +101,8 @@ Guy: That guy is so mean.
 
 title: Info
 ---
+<<declare $candy = 0>>
+you have {$candy} candy!
 <<declare $collectables = 0>>
 you have {$collectables} collectables!
 ===
