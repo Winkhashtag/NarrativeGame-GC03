@@ -1216,10 +1216,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::gameAdv
   sfx: {fileID: 1325966911}
-  sfxOptions: []
-  bgMusic: {fileID: 1325966911}
-  bgMusicOptions:
+  sfxOptions:
   - {fileID: 8300000, guid: 04e66de8815ce824a8346cd4d2400afd, type: 3}
+  bgMusic: {fileID: 1325966911}
+  bgMusicOptions: []
 --- !u!4 &1325966913
 Transform:
   m_ObjectHideFlags: 0
