@@ -3,21 +3,41 @@
 <<if $handing == true>>
     <<jump mom_gave_candy>>
 <<endif>>
-Mom: Sweetie, are you sure you don't want me to accompany you tonight?
-Me: No, Mom! Everyone else is trick or treating by themselves.
-Me: I don't want to be known as the kid who needed his mom to trick or treat with him..
-Mom: Okay, honey..No worries...Just make sure you stay safe.
-Mom: Oh, and be home before 10!
-Me: Okay, Mom. Anything else?
-Mom: Yes. She leans down and kisses your cheek.
-Me: Mom!
-The doorbell rings.
-Mom: Pat, go hand the kids some candy on your way out.
-Me: Do I have to?
-Mom: Yes. Now go.
+
+<<if $talk == true and $handing == false>>
+    <<jump mom_not_give>>
+<<endif>>
+<<if not visited("mom")>>
+    Mom: Sweetie, are you sure you don't want me to accompany you tonight?
+    -> No, Mom! Everyone else is trick or treating by themselves.
+        Me: No, Mom! Everyone else is trick or treating by themselves.
+        Me: I don't want to be known as the kid who needed his mom to trick or treat with him..
+        Mom: Okay, honey..No worries...Just make sure you stay safe.
+        Mom: Oh, and be home before 10!
+        Me: Okay, Mom. Anything else?
+        Mom: Yes. She leans down and kisses your cheek.
+        Me: Mom!
+    -> Mom, I can't, everyone will think I'm lame.
+        Me: Mom, I can't, everyone will think I'm lame.
+        Mom: Aww, come on, we do it every year!
+        Me: No, I'm grown now! I'm 14!
+        She exhales.
+        Mom: Okay, fine.
+        Mom: But please don't get into any trouble.
+        Me: Yes! Thank you!
+        Mom: One more thing. She leans down and kisses your cheek.
+        Mom: Be home before 10.
+        Me: Ugh.
+    <<play_sfx2 game 0>>
+    The doorbell rings.
+    Mom: Pat, go hand the kids some candy on your way out.
+    Me: Do I have to?
+    Mom: Yes. Now go.
+<<endif>>
 ===
 title: kid1
 ---
+<<set $talk = true>> 
 Kid 1: Trick or treat!
 <<if $candy > 0>>
     Give candy?
@@ -35,17 +55,17 @@ Kid 1: Trick or treat!
 
 title: kid2
 ---
+<<set $talk = true>>
 Kid 2: Trick or treat!
     <<if $candy > 0>>
+    Kid 2: Happy Halloween!
      Give candy?
     -> No
-        Kid 2: Happy Halloween!
         Me: Sorry kid, no candy.
         Kid 2: WAAAAAAAAAAAAAAAAAA
     -> Yes
         <<set $candy = $candy - 1>>
         <<set $handing = true>>
-        Kid 2: Happy Halloween!
         Me: Here's some candy.
         Kid 2: Thank you!!
 <<elseif $candy == 0>>
@@ -57,6 +77,13 @@ title: mom_gave_candy
 ---
 Me: Ma, I handed them candy.
 Mom: Thanks, honey. Now, go get all the candy you can carry.
+===
+
+title: mom_not_give
+---
+Me: Sorry Ma, but I gotta go now. No time to give out candy.
+Mom: Oh, so no trick or treating for you, I guess.
+Me: Ugh, fine!
 ===
 
 title: Guy
